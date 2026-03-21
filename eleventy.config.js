@@ -36,9 +36,7 @@ export default function (eleventyConfig) {
 		const validType = types[type] || 'info'; // Default to info if type is invalid
 
 		return `
-			<div class="infobox ${validType}">
-			<p>${content}</p>
-			</div>
+			<div class="infobox ${validType}"><p>${content}</p></div>
 		`;
 	});
 

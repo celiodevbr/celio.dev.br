@@ -1,5 +1,6 @@
 ---
 title: Let's talk about the little things
+date: 2024-10-19T21:00:00-03:00
 tags:
  - foo
 ---

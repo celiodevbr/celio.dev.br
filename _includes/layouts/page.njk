@@ -1,0 +1,27 @@
+---
+layout: layouts/base
+---
+
+<section class="page">
+	<header class="page-header">
+		{% if eyebrow %}
+			<p class="page-header__eyebrow">{{ eyebrow }}</p>
+		{% endif %}
+
+		<h1 class="page-header__title">{{ title }}</h1>
+
+		{% if description %}
+			<p class="page-header__intro">{{ description }}</p>
+		{% endif %}
+
+		{% if meta %}
+			<div class="page-header__meta">
+				<div class="infobox {{ tone or 'info' }}">
+					<p>{{ meta | safe }}</p>
+				</div>
+			</div>
+		{% endif %}
+	</header>
+
+	{{ content | safe }}
+</section>
