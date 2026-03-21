@@ -1,17 +1,21 @@
 import { DateTime } from "luxon";
 
+const SITE_TZ = "America/Sao_Paulo";
+
 export default function(eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (dateObj, format) => {
 		return DateTime
-			.fromJSDate(dateObj)
-			.setLocale("pt-BR")
-			.toFormat(format || "dd LLLL yyyy · H:mm");
+		.fromJSDate(dateObj, { zone: "utc" })
+		.setZone(SITE_TZ)
+		.setLocale("pt-BR")
+		.toFormat(format || "dd LLLL yyyy · H:mm");
 	});
 
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
 		return DateTime
-			.fromJSDate(dateObj)
-			.toFormat("yyyy-LL-dd");
+			.fromJSDate(dateObj, { zone: "utc" })
+			.setZone(SITE_TZ)
+			.toISO();
 	});
 
 	eleventyConfig.addFilter("head", (array, n) => {
