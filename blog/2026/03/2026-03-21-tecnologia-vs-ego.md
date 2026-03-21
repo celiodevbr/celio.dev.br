@@ -119,12 +119,3 @@ Ser profissional não é parecer impecável.
 Num setor obcecado por performance, talvez o gesto mais profissional seja preservar discernimento. Saber a hora de acelerar, a hora de revisar, a hora de pedir ajuda e a hora de parar.
 
 Porque, no fim, tecnologia continua sendo feita por pessoas. E toda carreira que ignora isso cedo ou tarde cobra um preço alto demais.
-
-## Notas e referências
-
-[^1]: Microsoft e LinkedIn, *2024 Work Trend Index: AI at Work Is Here. Now Comes the Hard Part*. Disponível em: https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part/
-[^2]: Stack Overflow, *Developers remain willing but reluctant to use AI: The 2025 Developer Survey results are here*. Disponível em: https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/
-[^3]: DORA / Google Cloud, *DORA Research: 2024*. Disponível em: https://dora.dev/research/2024/dora-report/
-[^4]: DORA / Google Cloud, *How gen AI affects the value of development work*. Disponível em: https://dora.dev/insights/value-of-development-work/
-[^5]: World Health Organization, *Burn-out an occupational phenomenon*. Disponível em: https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon
-[^6]: GitHub, *Octoverse 2024: AI leads Python to top language as the number of global developers surges*. Disponível em: https://github.blog/news-insights/octoverse/octoverse-2024/

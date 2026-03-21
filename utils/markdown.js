@@ -1,5 +1,4 @@
 import MarkdownIt from 'markdown-it';
-import markdownItFootnote from 'markdown-it-footnote';
 import markdownItAttrs from 'markdown-it-attrs';
 import implicitFiguresPlugin from './implicitFigures-fork.js';
 
@@ -11,7 +10,6 @@ const markdownItOptions = {
 
 export default function (eleventyConfig) {
     const md = new MarkdownIt(markdownItOptions)
-        .use(markdownItFootnote)
         .use(markdownItAttrs)
         .use(implicitFiguresPlugin);
 

@@ -21,7 +21,6 @@
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",
-    "markdown-it-footnote": "^4.0.0",
     "rimraf": "^6.1.3"
   }
 }

@@ -22,28 +22,19 @@
             </div>
         </div>
 
-<nav class="row navigation">
-    {% set navPages = collections.all | eleventyNavigation %}
-    <ul role="list">
-        {% for entry in navPages %}
-            {% set isActive = false %}
-            {% if entry.url == '/' %}
-                {% set isActive = page.url == '/' %}
-            {% else %}
-                {% set isActive = page.url.indexOf(entry.url) == 0 %}
-            {% endif %}
-
-            <li class="{% if isActive %}is-active{% endif %}">
-                <a
-                    href="{{ entry.url }}"
-                    {% if isActive %}aria-current="page"{% endif %}
-                >
-                    {{ entry.title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
+        <nav class="row navigation">
+            {%- set navPages = collections.all | eleventyNavigation %}
+            <ul role="list">
+                {% for entry in navPages %}
+                {%- set isActive = page.url == '/' if entry.url == '/' else page.url.indexOf(entry.url) == 0 -%}
+                <li class="{% if isActive %}is-active{% endif %}">
+                    <a href="{{ entry.url }}"{% if isActive %} aria-current="page"{% endif %}>
+                        {{ entry.title }}
+                    </a>
+                </li>
+                {%- endfor %}
+            </ul>
+        </nav>
 
 
         <ul role="list" class="row social-links">

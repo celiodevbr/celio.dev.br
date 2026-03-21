@@ -1,39 +1,26 @@
-{% set metatitle = site.title %}
+{%- set metatitle = title ~ " • " ~ site.title if title else site.title -%}
+{%- set metadesc = desc or site.desc -%}
+{%- set metatype = type or "website" -%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-{% if title %}
-    {% set metatitle = title ~ " • " ~ metatitle %}
-{% endif %}
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
-{% set metadesc = site.desc %}
-{% if desc %}
-    {% set metadesc = desc %}
-{% endif %}
+    <title>{{ metatitle | trim }}</title>
 
-{% set metatype = "website" %}
-{% if type %}
-    {% set metatype = type %}
-{% endif %}
+    <meta name="description" content="{{ metadesc | trim }}">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="{{ metatitle | trim }}">
+    <meta property="og:type" content="{{ metatype | trim }}">
+    <meta property="og:url" content="{{ site.baseurl ~ page.url }}">
+    <meta property="og:image" content="/assets/avatar.png">
+    <meta property="og:description" content="{{ metadesc | trim }}">
+    <meta name="fediverse:creator" content="@celio@fosstodon.org">
 
-<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="{{ site.baseurl ~ page.url }}">
 
-<title>{{ metatitle | trim }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
 
-<meta name="description" content="{{ metadesc | trim }}">
-
-<meta property="og:title" content="{{ metatitle | trim }}">
-<meta property="og:type" content="{{ metatype | trim }}">
-<meta property="og:url" content="{{ site.baseurl ~ page.url }}">
-<meta property="og:image" content="/assets/avatar.png">
-<meta property="og:description" content="{{ metadesc | trim }}">
-<meta name="fediverse:creator" content="@celio@fosstodon.org">
-
-<link rel="canonical" href="{{ site.baseurl ~ page.url }}">
-
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
-
-<link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
