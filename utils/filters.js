@@ -8,7 +8,7 @@ export default function(eleventyConfig) {
 		.fromJSDate(dateObj, { zone: "utc" })
 		.setZone(SITE_TZ)
 		.setLocale("pt-BR")
-		.toFormat(format || "dd LLLL yyyy · H:mm");
+		.toFormat(format || "dd 'de' LLLL yyyy 'às' H:mm");
 	});
 
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {

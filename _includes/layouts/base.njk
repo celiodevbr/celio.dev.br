@@ -8,7 +8,7 @@
         <div class="row">
             <div class="me">
                 <a aria-label="home" href="/">
-                    <img width="128" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="prettiest human in the world">
+                    <img width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="prettiest human in the world">
                 </a>
             </div>
         </div>
@@ -22,13 +22,33 @@
             </div>
         </div>
 
-        <nav class="row navigation">
-            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-        </nav>
+<nav class="row navigation">
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul role="list">
+        {% for entry in navPages %}
+            {% set isActive = false %}
+            {% if entry.url == '/' %}
+                {% set isActive = page.url == '/' %}
+            {% else %}
+                {% set isActive = page.url.indexOf(entry.url) == 0 %}
+            {% endif %}
+
+            <li class="{% if isActive %}is-active{% endif %}">
+                <a
+                    href="{{ entry.url }}"
+                    {% if isActive %}aria-current="page"{% endif %}
+                >
+                    {{ entry.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+
 
         <ul role="list" class="row social-links">
             <li><a href="">{% icon "custom:github-o", width="24px" %}</a></li>
-            <li><a rel="me" href="https://fosstodon.org/@celio">{% icon "custom:mastodon", width="24px" %}</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@celio">{% icon "custom:mastodon", width="22px" %}</a></li>
         </ul>
     </header>
     <main id="main">

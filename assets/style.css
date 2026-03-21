@@ -25,6 +25,7 @@
 *, *::after, *::before { box-sizing: border-box; }
 * { margin: 0; }
 
+svg,
 img {
     max-width: 100%;
     display: block;
@@ -49,6 +50,7 @@ body {
 @media (max-width: 736px) {
     body {
         display: grid;
+        align-content: start;
     }
 }
 
@@ -120,6 +122,7 @@ header.sidebar {
 
             display: grid;
             align-content: start;
+            row-gap: 8px;
 
             @media (max-width: 736px) {
                 & {
@@ -128,15 +131,24 @@ header.sidebar {
             }
         }
 
+        li.is-active > a, 
+        li:hover > a {
+            color: var(--accent);
+        }
+
+        li.is-active > a {
+            background-color: color-mix(in oklab, currentColor 5%, transparent);
+        }
+
         a {
             text-align: center;
             padding: 0.5em;
             text-decoration: none;
             display: block;
 
-            &:not(:hover) {
-                color: inherit;
-            }
+            font-weight: 600;
+            color: inherit;
+            border-radius: 8px;
 
             &:hover {
                 background-color: color-mix(in oklab, currentColor 10%, transparent);
@@ -175,7 +187,7 @@ main {
 }
 
 .section-header {
-    margin-bottom: 2.5rem;
+    margin-block-end: 2.5rem;
 }
 
 .section-header h1 {
@@ -186,7 +198,7 @@ main {
 }
 
 .section-header p {
-    margin-top: 0.85rem;
+    margin-block-start: 0.85rem;
     max-width: 52ch;
     color: color-mix(in oklab, currentColor 68%, transparent);
     font-size: 1.05rem;
@@ -216,7 +228,7 @@ main {
 }
 
 .post-timeline__item + .post-timeline__item {
-    margin-top: 2rem;
+    margin-block-start: 2rem;
 }
 
 .post-timeline__item::before {
@@ -290,7 +302,7 @@ main {
 }
 
 .section-action {
-    margin-top: 2rem;
+    margin-block-start: 2rem;
     padding-left: 2.5rem;
 }
 
@@ -322,7 +334,7 @@ main {
 
 @media (max-width: 640px) {
     .section-header {
-        margin-bottom: 2rem;
+        margin-block-end: 2rem;
     }
 
     .post-timeline__item {
@@ -345,7 +357,7 @@ main {
 
 .page-header {
     width: min(100%, 72ch);
-    margin-bottom: 3rem;
+    margin-block-end: 3rem;
 }
 
 .page-header__eyebrow {
@@ -376,7 +388,7 @@ main {
 }
 
 .page-header__meta {
-    margin-top: 1.5rem;
+    margin-block-start: 1.5rem;
 }
 
 .page-header__meta > * {
@@ -385,11 +397,11 @@ main {
 
 @media (max-width: 640px) {
     .page-header {
-        margin-bottom: 2.25rem;
+        margin-block-end: 2.25rem;
     }
 
     .page-header__eyebrow {
-        margin-bottom: 0.7rem;
+        margin-block-end: 0.7rem;
         font-size: 0.78rem;
     }
 
@@ -398,12 +410,12 @@ main {
     }
 
     .page-header__intro {
-        margin-top: 0.85rem;
+        margin-block-start: 0.85rem;
         font-size: 1rem;
     }
 
     .page-header__meta {
-        margin-top: 1.2rem;
+        margin-block-start: 1.2rem;
     }
 }
 
@@ -413,7 +425,7 @@ article {
 }
 
 article > header {
-    margin-bottom: 2.5rem;
+    margin-block-end: 2.5rem;
 }
 
 article > .content {
@@ -422,15 +434,15 @@ article > .content {
 }
 
 article > .content > * + * {
-    margin-top: 1.25rem;
+    margin-block-start: 1.25rem;
 }
 
 article > .content > h2,
 article > .content > h3,
 article > .content > h4,
 article > .content > h5 {
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
+    margin-block-start: 2.5rem;
+    margin-block-end: 0.75rem;
     line-height: 1.15;
     letter-spacing: -0.02em;
 }
@@ -441,7 +453,7 @@ article > .content ol {
 }
 
 article > .content li + li {
-    margin-top: 0.35rem;
+    margin-block-start: 0.35rem;
 }
 
 article > .content ul,
@@ -456,24 +468,18 @@ article header {
 }
 
 article header h1 {
+    margin: 0;
+    margin-block-end: 0.75rem;
     color: var(--neutral-1000);
-    margin-bottom: 0.75rem;
-}
-
-article .metadata {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem 1rem;
-    font-size: 0.95rem;
-    line-height: 1.4;
 }
 
 article time {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.45em;
     font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1;
 }
 
 .post-list {
@@ -507,7 +513,7 @@ article time {
 
 .page-footer {
     text-align: center;
-    margin-bottom: 8px;
+    margin-block-end: 8px;
 }
 
 a[href] {
@@ -524,7 +530,7 @@ a[href]:focus-visible {
 }
 
 .footnotes {
-    margin-top: 3rem;
+    margin-block-start: 3rem;
     padding-top: 1rem;
     border-top: 1px solid var(--neutral-100);
     font-size: 0.92rem;
@@ -536,7 +542,7 @@ a[href]:focus-visible {
 }
 
 .footnotes li + li {
-    margin-top: 0.75rem;
+    margin-block-start: 0.75rem;
 }
 
 .footnotes-sep { display: none; }
@@ -564,6 +570,10 @@ blockquote::before {
 }
 
 /* Typography */
+p, h1, h2, h3, h4, h5 {
+    margin-block: 1em;
+}
+
 h1, h2, h3, h4, h5 {
     text-wrap: balance;
     font-weight: 500;
@@ -615,7 +625,7 @@ small {font-size: 0.8em;}
     content: "";
     width: 0.8rem;
     height: 0.8rem;
-    margin-top: 0.35rem;
+    margin-block-start: 0.35rem;
     border-radius: 999px;
     background: var(--_accent);
     box-shadow:

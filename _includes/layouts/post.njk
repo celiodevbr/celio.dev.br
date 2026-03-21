@@ -5,19 +5,19 @@ layout: layouts/base
 <article>
     <header>
         <h1>{{ title }}</h1>
-        <div class="metadata">
-            <time datetime="{{ page.date }}">
-                {% icon "custom:calendar", width="24px" %}
-                <span>{{ page.date | readableDate }}</span>
-            </time>
-            {% if tags and tags.length %}
-                ∘ <span>
-                {{ tags | join(', ') }}
-                </span>
-            {% endif %}
-        </div>
+        <time datetime="{{ page.date }}">
+            {% icon "custom:time", width="24px" %}
+            <span>{{ page.date | readableDate }}</span>
+        </time>
     </header>
     <div class="content">
         {{ content | safe }}
     </div>
+    <footer>
+        {% if tags and tags.length %}
+            ∘ <span>
+            {{ tags | join(', ') }}
+            </span>
+        {% endif %}
+    </footer>
 </article>
