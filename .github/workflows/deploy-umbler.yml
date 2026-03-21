@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -28,13 +28,20 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.UMBLER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          printf "%s" "${{ secrets.UMBLER_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p "${{ secrets.UMBLER_PORT }}" "${{ secrets.UMBLER_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy public/ to Umbler
+      - name: Pack site
+        run: tar -czf site.tar.gz -C public .
+
+      - name: Upload artifact
         run: |
-          rsync -avz --delete \
-            -e "ssh -p ${{ secrets.UMBLER_PORT }}" \
-            public/ \
-            "${{ secrets.UMBLER_USER }}@${{ secrets.UMBLER_HOST }}:~/public/"
+          scp -P "${{ secrets.UMBLER_PORT }}" site.tar.gz \
+            "${{ secrets.UMBLER_USER }}@${{ secrets.UMBLER_HOST }}:~/site.tar.gz"
+
+      - name: Publish on Umbler
+        run: |
+          ssh -p "${{ secrets.UMBLER_PORT }}" \
+            "${{ secrets.UMBLER_USER }}@${{ secrets.UMBLER_HOST }}" \
+            "mkdir -p ~/public && find ~/public -mindepth 1 -maxdepth 1 -exec rm -rf {} + && tar -xzf ~/site.tar.gz -C ~/public && rm ~/site.tar.gz"
