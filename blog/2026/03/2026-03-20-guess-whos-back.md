@@ -22,4 +22,6 @@ Outros trabalhos incluem um stack para SaaS de clínica dental em PHP. Mas esse 
 Eu finalmente coloquei esse troço para rodar no github actions!!! Amém!
 Tem algo errado nas datas...
 
+Datas corrigidas!
+
 ... Esse post será atualizado.
