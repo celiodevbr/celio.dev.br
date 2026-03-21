@@ -17,4 +17,8 @@ Meu trabalho mais recente de site, é um loja https://izazordshop.com.br feito c
 
 Outros trabalhos incluem um stack para SaaS de clínica dental em PHP. Mas esse desenvolvimento estagnou, **de novo**.
 
+## Github actions!
+
+Eu finalmente coloquei esse troço para rodar no github actions!!! Amém!
+
 ... Esse post será atualizado.
