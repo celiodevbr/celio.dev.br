@@ -1,7 +1,3 @@
-.now-entry,
-.now-section {
-    width: min(100%, 66ch);
-}
 
 .now-entry {
     position: relative;
@@ -20,7 +16,8 @@
 
 .now-entry::before {
     content: "now";
-    display: inline-flex;
+    display: inline-grid;
+    place-items: center;
     width: fit-content;
     margin-bottom: 0.9rem;
     padding: 0.22rem 0.55rem;
@@ -28,19 +25,19 @@
     border-radius: 999px;
     background: color-mix(in oklab, var(--accent) 8%, transparent);
     color: color-mix(in oklab, var(--text) 76%, var(--accent));
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
+    line-height: 1;
     text-transform: uppercase;
 }
 
 .now-entry__lede {
     margin: 0;
     max-width: 58ch;
+    color: color-mix(in oklab, currentColor 84%, transparent);
     font-size: clamp(1.08rem, 2vw, 1.22rem);
     line-height: 1.8;
-    color: color-mix(in oklab, currentColor 84%, transparent);
 }
 
 .now-entry__link {
@@ -76,10 +73,6 @@
     margin-top: 0;
     margin-bottom: 0.85rem;
     max-width: none;
-}
-
-.now-section__body {
-    max-width: 62ch;
 }
 
 @media (max-width: 640px) {

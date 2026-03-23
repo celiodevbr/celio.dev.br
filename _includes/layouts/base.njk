@@ -6,6 +6,30 @@
     <body>
         <header class="sidebar">
             <div class="sidebar__inner">
+                <div class="accent-picker">
+                        <button
+                            class="accent-picker__toggle"
+                            type="button"
+                            aria-controls="accent-picker-options"
+                            aria-label="Escolher cor de destaque"
+                            tabindex="0"
+                        >
+                            <span class="accent-picker__toggle-dot" aria-hidden="true"></span>
+                        </button>
+
+                        <div class="accent-picker__panel" id="accent-picker-options" tabindex="-1">
+                        <p class="accent-picker__label">Escolha uma cor</p>
+                        <div class="accent-picker__options" role="group" aria-label="Escolher cor de destaque">
+                            <button class="accent-picker__swatch" type="button" data-accent="#2d9cdb" aria-label="Azul" aria-pressed="true" style="--swatch-color: #2d9cdb;"></button>
+                            <button class="accent-picker__swatch" type="button" data-accent="#0f766e" aria-label="Verde petróleo" aria-pressed="false" style="--swatch-color: #0f766e;"></button>
+                            <button class="accent-picker__swatch" type="button" data-accent="#2f9e44" aria-label="Verde" aria-pressed="false" style="--swatch-color: #2f9e44;"></button>
+                            <button class="accent-picker__swatch" type="button" data-accent="#d97706" aria-label="Âmbar" aria-pressed="false" style="--swatch-color: #d97706;"></button>
+                            <button class="accent-picker__swatch" type="button" data-accent="#c2410c" aria-label="Terracota" aria-pressed="false" style="--swatch-color: #c2410c;"></button>
+                            <button class="accent-picker__swatch" type="button" data-accent="#7c3aed" aria-label="Violeta" aria-pressed="false" style="--swatch-color: #7c3aed;"></button>
+                        </div>
+                    </div>
+                </div>
+
                 <a class="sidebar__avatar" aria-label="Página inicial" href="/">
                     <img class="sidebar__avatar-image" width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="Retrato de {{ site.title }}">
                 </a>

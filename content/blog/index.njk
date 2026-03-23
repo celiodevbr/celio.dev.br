@@ -19,7 +19,7 @@ eleventyNavigation:
             <li class="timeline__item">
                 <article class="timeline__entry">
                     <time class="timeline__date" datetime="{{ post.date | htmlDateString }}">
-                        {{ post.date | readableDate("dd 'de' LLL yyyy") }}
+                        <span class="timeline__date-text">{{ post.date | readableDate("dd 'de' LLL yyyy") }}</span>
                     </time>
 
                     <h2 class="timeline__title">

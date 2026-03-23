@@ -1,8 +1,7 @@
 @import "./css/tokens.css";
 @import "./css/base.css";
 @import "./css/sidebar.css";
+@import "./css/components.css";
 @import "./css/page.css";
 @import "./css/post.css";
-@import "./css/timeline.css";
-@import "./css/components.css";
 @import "./css/now.css";
