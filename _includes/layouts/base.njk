@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt_BR">
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
     <head>
         {% include "head.njk" %}
     </head>
     <body>
         <header class="sidebar">
-            <div class="row">
-                <div class="me">
-                    <a aria-label="home" href="/">
-                        <img width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="prettiest human in the world">
-                    </a>
-                </div>
+            <a class="me" aria-label="Página inicial" href="/">
+                <img width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="Retrato de {{ site.title }}">
+            </a>
+
+            <div class="identity">
+                <p class="title">
+                    <a aria-label="Página inicial" href="/">{{ site.title }}</a>
+                </p>
+                <p class="desc">{{ site.desc }}</p>
             </div>
 
-            <div class="row identity">
-                <div class="title">
-                    <a aria-label="home" href="/">{{ site.title }}</a>
-                </div>
-                <div class="desc">
-                    {{ site.desc }}
-                </div>
-            </div>
-
-            <nav class="row navigation">
+            <nav class="navigation" aria-label="Principal">
                 {%- set navPages = collections.all | eleventyNavigation %}
                 <ul role="list">
                     {% for entry in navPages %}
@@ -36,13 +30,11 @@
                 </ul>
             </nav>
 
-            <ul role="list" class="row social-links">
+            <ul role="list" class="social-links">
                 <li>
-                    <a href="">{% icon "custom:github-logo--duotone", width="22px" %}</a>
-                </li>
-                <li>
-                    <a rel="me" href="https://fosstodon.org/@celio">{% icon "custom:mastodon-logo--duotone",
-                        width = "22px" %}</a>
+                    <a rel="me" href="https://fosstodon.org/@celio" aria-label="Mastodon">
+                        {% icon "custom:mastodon-logo--duotone", width = "22px" %}
+                    </a>
                 </li>
             </ul>
         </header>

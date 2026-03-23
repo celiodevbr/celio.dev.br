@@ -1,24 +1,29 @@
----
+﻿---
 layout: layouts/base
 ---
 
-<article>
-    <header>
-        <h1>{{ title }}</h1>
-        <time datetime="{{ page.date }}">
-            {% icon "custom:calendar-dot",
-            width = "1.5em" %}
-            <span>{{ page.date | readableDate }}</span>
-        </time>
-    </header>
-    <div class="content">
-        {{ content | safe }}
-    </div>
-    <footer>
-        {% if tags and tags.length %}
-            ∘ <span>
-                {{ tags | join(', ') }}
-            </span>
+{% set visibleTags = tags | filterTagList %}
+
+<section class="page page--post">
+    <article class="post">
+        <header class="page-header post-header">
+            <h1 class="title">{{ title }}</h1>
+            <time class="post-date" datetime="{{ page.date | htmlDateString }}">
+                {% icon "custom:calendar-dot", width = "1.5em" %}
+                <span>{{ page.date | readableDate }}</span>
+            </time>
+        </header>
+        <div class="content">
+            {{ content | safe }}
+        </div>
+        {% if visibleTags and visibleTags.length %}
+            <footer class="post-footer">
+                <ul class="tag-list tag-list--muted" role="list" aria-label="Tags do post">
+                    {% for tag in visibleTags %}
+                        <li>{{ tag }}</li>
+                    {% endfor %}
+                </ul>
+            </footer>
         {% endif %}
-    </footer>
-</article>
+    </article>
+</section>

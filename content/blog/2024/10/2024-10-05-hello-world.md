@@ -52,7 +52,7 @@ Já essa variação pode ser reservada para erros, avisos críticos ou qualquer 
 
 Também é possível inserir imagens normalmente no meio do conteúdo:
 
-![Image](/assets/posts/o-que-e-post.png)
+![O que é Post?](/assets/posts/o-que-e-post.png "Na Imagem: O que é Post?")
 
 Isso pode ser útil para ilustrar exemplos, mostrar interfaces, anexar capturas de tela ou complementar explicações visuais.
 

@@ -1,14 +1,15 @@
-﻿import pluginNavigation from "@11ty/eleventy-navigation";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginMarkdown from "./utils/markdown.js";
 import pluginFilters from "./utils/filters.js";
 import pluginIcons from "eleventy-plugin-icons";
 
 const CONTENT_GLOBS = {
-	posts: 'blog/**/*.md',
+	posts: 'content/blog/**/*.md',
 };
 
 export default function (eleventyConfig) {
-	// Navigation
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 	eleventyConfig.addPlugin(pluginNavigation);
 
 	// Icons
@@ -35,22 +36,20 @@ export default function (eleventyConfig) {
 
 		const validType = types[type] || 'info'; // Default to info if type is invalid
 
-		return `
-			<div class="infobox ${validType}"><p>${content}</p></div>
-		`;
+		return `<div class="infobox ${validType}"><p>${content}</p></div>`;
 	});
 
 	// Collections: Posts
 	eleventyConfig.addCollection('posts', function (collection) {
 		const posts = collection
-		.getFilteredByGlob(CONTENT_GLOBS.posts)
-		.filter(post => post.fileSlug !== 'blog') // Exclude blog/index.md
-		.sort((a, b) => new Date(b.date) - new Date(a.date));
+			.getFilteredByGlob(CONTENT_GLOBS.posts)
+			.filter(post => post.fileSlug !== 'blog') // Exclude blog/index.md
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 		return posts;
 	});
 
-	eleventyConfig.addShortcode("1sti", function(content) {
+	eleventyConfig.addShortcode("1sti", function (content) {
 		const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
 		if (imgMatch) {
 			return `<img src="${imgMatch[1]}" alt="Image" style="height: 100%;">`;
@@ -76,6 +75,9 @@ export const config = {
 	htmlTemplateEngine: "njk",
 
 	dir: {
+		input: "content",
+		includes: "../_includes",  // default: "_includes" (`input` relative)
+		data: "../_data",          // default: "_data" (`input` relative)
 		output: "public",
 	}
 }

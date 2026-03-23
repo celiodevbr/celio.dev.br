@@ -24,7 +24,7 @@ Isso traz oportunidades reais. Novas ferramentas reduzem tarefas repetitivas, li
 
 Em muitas profissões, experiência acumulada tende a trazer mais previsibilidade. Em tecnologia, experiência ajuda muito, mas não elimina a necessidade de reaprender. O profissional sênior continua estudando. O pleno continua se atualizando. O júnior entra no mercado já sentindo que começou atrasado.
 
-Esse ambiente produz um paradoxo curioso: nunca tivemos tantas ferramentas para ganhar velocidade e, ao mesmo tempo, tanta gente se sentindo sobrecarregada. No relatório *Work Trend Index 2024*, da Microsoft com o LinkedIn, 75% dos trabalhadores do conhecimento disseram usar IA no trabalho, e muitos relataram ganhos em tempo, foco e criatividade.[^1] Mas o mesmo relatório mostra um ambiente de forte tensão profissional: 46% disseram considerar pedir demissão no ano seguinte.[^1]
+Esse ambiente produz um paradoxo curioso: nunca tivemos tantas ferramentas para ganhar velocidade e, ao mesmo tempo, tanta gente se sentindo sobrecarregada. No relatório *Work Trend Index 2024*, da Microsoft com o LinkedIn, 75% dos trabalhadores do conhecimento disseram usar IA no trabalho, e muitos relataram ganhos em tempo, foco e criatividade. Mas o mesmo relatório mostra um ambiente de forte tensão profissional: 46% disseram considerar pedir demissão no ano seguinte.
 
 Ou seja: ganhar velocidade não resolve, por si só, a pergunta mais importante do trabalho moderno, que é como continuar saudável enquanto tudo acelera.
 
@@ -46,7 +46,7 @@ Bons profissionais costumam ser aqueles que:
 
 Essa maturidade ficou ainda mais importante agora, em um momento em que a IA passou a ocupar parte do trabalho cotidiano. O debate deixou de ser “usar ou não usar” e passou a ser “como usar bem, com critério”.
 
-Os dados mais recentes reforçam essa ambiguidade. A pesquisa *Stack Overflow Developer Survey 2025* mostra que 80% dos desenvolvedores já usam ferramentas de IA no fluxo de trabalho, mas a confiança na precisão dessas ferramentas caiu para 29%.[^2] Além disso, 66% disseram gastar mais tempo corrigindo código gerado por IA que ficou “quase certo, mas não totalmente”.[^2] Ao mesmo tempo, 69% relataram aumento de produtividade com agentes de IA entre os que já sentiram impacto deles no trabalho.[^2]
+Os dados mais recentes reforçam essa ambiguidade. A pesquisa *Stack Overflow Developer Survey 2025* mostra que 80% dos desenvolvedores já usam ferramentas de IA no fluxo de trabalho, mas a confiança na precisão dessas ferramentas caiu para 29%. Além disso, 66% disseram gastar mais tempo corrigindo código gerado por IA que ficou “quase certo, mas não totalmente”. Ao mesmo tempo, 69% relataram aumento de produtividade com agentes de IA entre os que já sentiram impacto deles no trabalho.
 
 Para mim, isso resume bem o momento atual: a IA ajuda, mas não substitui julgamento. Ela acelera, mas não elimina responsabilidade. E talvez reforce algo que a carreira técnica sempre deveria ter valorizado: pensar bem continua sendo mais valioso do que apenas produzir rápido.
 
@@ -65,7 +65,7 @@ No fim, muito do valor real em tecnologia está em atividades menos visíveis:
 - fazer uma revisão cuidadosa;
 - ajudar alguém menos experiente a crescer.
 
-A pesquisa da DORA, publicada pelo Google Cloud, ouviu mais de 39 mil profissionais em 2024 e voltou a destacar que desempenho sustentável depende não apenas de ferramenta, mas de contexto organizacional, prioridades estáveis e práticas saudáveis de trabalho.[^3] Em um insight publicado no fim de 2024, a própria DORA observou algo interessante: desenvolvedores que usam IA com mais intensidade relatam mais produtividade, mais satisfação e menos burnout, mas também menos tempo em trabalho percebido como valioso.[^4]
+A pesquisa da DORA, publicada pelo Google Cloud, ouviu mais de 39 mil profissionais em 2024 e voltou a destacar que desempenho sustentável depende não apenas de ferramenta, mas de contexto organizacional, prioridades estáveis e práticas saudáveis de trabalho. Em um insight publicado no fim de 2024, a própria DORA observou algo interessante: desenvolvedores que usam IA com mais intensidade relatam mais produtividade, mais satisfação e menos burnout, mas também menos tempo em trabalho percebido como valioso.
 
 Essa conclusão é importante porque desmonta uma ideia simplista: a de que otimizar tarefas automaticamente melhora a experiência profissional. Nem sempre. Às vezes, ficamos mais rápidos, mas menos conectados com o que dá sentido ao que fazemos.
 
@@ -77,7 +77,7 @@ Quando alguém se esgota em tecnologia, ainda existe uma tendência cultural de 
 
 Essa leitura é injusta e, em muitos casos, errada.
 
-A Organização Mundial da Saúde define burnout como uma síndrome resultante de estresse crônico no trabalho que não foi gerenciado com sucesso, caracterizada por exaustão, distanciamento mental do trabalho e redução da eficácia profissional.[^5] A própria definição já deixa claro: não se trata apenas de “não saber lidar”. Trata-se também de contexto, gestão, carga, expectativa e ambiente.
+A Organização Mundial da Saúde define burnout como uma síndrome resultante de estresse crônico no trabalho que não foi gerenciado com sucesso, caracterizada por exaustão, distanciamento mental do trabalho e redução da eficácia profissional. A própria definição já deixa claro: não se trata apenas de “não saber lidar”. Trata-se também de contexto, gestão, carga, expectativa e ambiente.
 
 Na tecnologia, isso aparece de várias formas:
 
@@ -100,7 +100,7 @@ A realidade é o oposto.
 
 Tecnologia é uma carreira profundamente coletiva. A gente aprende com review, fórum, documentação, pares, líderes, comunidades, mantenedores de open source e colegas que compartilham atalhos, contexto e experiência.
 
-O relatório *Octoverse 2024*, do GitHub, mostrou o crescimento contínuo dessa dimensão coletiva: 1,4 milhão de novos desenvolvedores passaram a contribuir com open source em 2024, e o Brasil apareceu entre as comunidades de desenvolvedores que mais crescem globalmente.[^6]
+O relatório *Octoverse 2024*, do GitHub, mostrou o crescimento contínuo dessa dimensão coletiva: 1,4 milhão de novos desenvolvedores passaram a contribuir com open source em 2024, e o Brasil apareceu entre as comunidades de desenvolvedores que mais crescem globalmente.
 
 Isso diz muito sobre o momento do setor: aprender e trabalhar em tecnologia está cada vez menos ligado ao isolamento e cada vez mais à colaboração distribuída.
 

@@ -1,21 +1,17 @@
-import MarkdownIt from 'markdown-it';
-import markdownItAttrs from 'markdown-it-attrs';
-import implicitFiguresPlugin from './implicitFigures-fork.js';
-
-const markdownItOptions = {
-    html: true,
-    linkify: true,
-    breaks: true
-};
+import MarkdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItImplicitFigures from "./markdown-it-implicit-figures.js";
 
 export default function (eleventyConfig) {
-    const md = new MarkdownIt(markdownItOptions)
-        .use(markdownItAttrs)
-        .use(implicitFiguresPlugin);
+  const md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    breaks: true,
+  })
+    .use(markdownItAttrs)
+    .use(markdownItImplicitFigures);
 
-    eleventyConfig.addFilter("markdownify", string => {
-        return md.render(string)
-    })
+  eleventyConfig.setLibrary("md", md);
 
-    eleventyConfig.setLibrary('md', md);
+  eleventyConfig.addFilter("markdownify", (value = "") => md.render(String(value)));
 }
