@@ -41,9 +41,13 @@ ul[role="list"] {
 }
 
 html {
-    font-size:  100%;
+    font-size:  85%;
     scroll-behavior: smooth;
-    color-scheme: light dark; 
+    color-scheme: light dark;
+
+    @media (min-width: 1400px) {
+        font-size: 100%;
+    }
 }
 
 body {
@@ -206,7 +210,7 @@ article {
             font-weight: 700;
             font-size: 0.9em;
             letter-spacing: 0.1em;
-            color: var(--grey);
+            opacity: 0.5;
             margin-block-end: -1rem;
         }
 
@@ -220,7 +224,7 @@ article {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--grey);
+            opacity: 0.75;
         }
     }
 

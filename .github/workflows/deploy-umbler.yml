@@ -1,4 +1,4 @@
-name: Deploy blog to Umbler
+﻿name: Deploy blog to Umbler
 
 on:
   push:

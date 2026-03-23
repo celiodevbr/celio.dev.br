@@ -1,4 +1,4 @@
-import pluginNavigation from "@11ty/eleventy-navigation";
+﻿import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginMarkdown from "./utils/markdown.js";
 import pluginFilters from "./utils/filters.js";
 import pluginIcons from "eleventy-plugin-icons";

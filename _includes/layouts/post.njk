@@ -6,7 +6,8 @@ layout: layouts/base
     <header>
         <h1>{{ title }}</h1>
         <time datetime="{{ page.date }}">
-            {% icon "custom:time", width="24px" %}
+            {% icon "custom:calendar-dot",
+            width = "1.5em" %}
             <span>{{ page.date | readableDate }}</span>
         </time>
     </header>
@@ -16,7 +17,7 @@ layout: layouts/base
     <footer>
         {% if tags and tags.length %}
             ∘ <span>
-            {{ tags | join(', ') }}
+                {{ tags | join(', ') }}
             </span>
         {% endif %}
     </footer>

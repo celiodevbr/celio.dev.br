@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-<head>
-    {% include "head.njk" %}
-</head>
-<body>
-    <header class="sidebar">
-        <div class="row">
-            <div class="me">
-                <a aria-label="home" href="/">
-                    <img width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="prettiest human in the world">
-                </a>
-            </div>
-        </div>
-
-        <div class="row identity">
-            <div class="title">
-                <a aria-label="home" href="/">{{ site.title }}</a>
-            </div>
-            <div class="desc">
-                {{ site.desc }}
-            </div>
-        </div>
-
-        <nav class="row navigation">
-            {%- set navPages = collections.all | eleventyNavigation %}
-            <ul role="list">
-                {% for entry in navPages %}
-                {%- set isActive = page.url == '/' if entry.url == '/' else page.url.indexOf(entry.url) == 0 -%}
-                <li class="{% if isActive %}is-active{% endif %}">
-                    <a href="{{ entry.url }}"{% if isActive %} aria-current="page"{% endif %}>
-                        {{ entry.title }}
+    <head>
+        {% include "head.njk" %}
+    </head>
+    <body>
+        <header class="sidebar">
+            <div class="row">
+                <div class="me">
+                    <a aria-label="home" href="/">
+                        <img width="144" height="144" src="https://gravatar.com/avatar/343a416fd183746c03fa7c2cd750cf15?size=256&cache=1729188961042" alt="prettiest human in the world">
                     </a>
+                </div>
+            </div>
+
+            <div class="row identity">
+                <div class="title">
+                    <a aria-label="home" href="/">{{ site.title }}</a>
+                </div>
+                <div class="desc">
+                    {{ site.desc }}
+                </div>
+            </div>
+
+            <nav class="row navigation">
+                {%- set navPages = collections.all | eleventyNavigation %}
+                <ul role="list">
+                    {% for entry in navPages %}
+                        {%- set isActive = page.url == '/' if entry.url == '/' else page.url.indexOf(entry.url) == 0 -%}
+                        <li class="{% if isActive %}is-active{% endif %}">
+                            <a href="{{ entry.url }}"{% if isActive %} aria-current="page"{% endif %}>
+                                {{ entry.title }}
+                            </a>
+                        </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+
+            <ul role="list" class="row social-links">
+                <li>
+                    <a href="">{% icon "custom:github-logo--duotone", width="22px" %}</a>
                 </li>
-                {%- endfor %}
+                <li>
+                    <a rel="me" href="https://fosstodon.org/@celio">{% icon "custom:mastodon-logo--duotone",
+                        width = "22px" %}</a>
+                </li>
             </ul>
-        </nav>
-
-
-        <ul role="list" class="row social-links">
-            <li><a href="">{% icon "custom:github-o", width="24px" %}</a></li>
-            <li><a rel="me" href="https://fosstodon.org/@celio">{% icon "custom:mastodon", width="22px" %}</a></li>
-        </ul>
-    </header>
-    <main id="main">
-        {{ content | safe }}
-    </main>
-</body>
+        </header>
+        <main id="main">
+            {{ content | safe }}
+        </main>
+    </body>
 </html>
