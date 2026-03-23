@@ -7,15 +7,15 @@ eleventyNavigation:
 ---
 
 {% if collections.posts.length > 0 %}
-    <ol class="post-timeline" role="list">
+    <ol class="timeline" role="list">
         {% for post in collections.posts | head(10) %}
-            <li class="post-timeline__item">
-                <article class="post-timeline__entry">
-                    <time class="post-timeline__date" datetime="{{ post.date | htmlDateString }}">
+            <li class="timeline__item">
+                <article class="timeline__entry">
+                    <time class="timeline__date" datetime="{{ post.date | htmlDateString }}">
                         {{ post.date | readableDate("dd 'de' LLL yyyy") }}
                     </time>
 
-                    <h2 class="post-timeline__title">
+                    <h2 class="timeline__title">
                         <a href="{{ post.url }}#main">{{ post.data.title }}</a>
                     </h2>
                 </article>
@@ -23,8 +23,8 @@ eleventyNavigation:
         {% endfor %}
     </ol>
 
-    <ul role="list" class="actions">
-        <li><a class="more-link" href="/blog/">Ver arquivo completo</a></li>
+    <ul role="list" class="page__actions">
+        <li><a class="link-more" href="/blog/">Ver arquivo completo</a></li>
     </ul>
 {% else %}
     <p>Nenhum post encontrado.</p>

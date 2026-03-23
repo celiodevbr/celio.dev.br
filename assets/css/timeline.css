@@ -1,0 +1,123 @@
+.page__actions {
+    margin-top: 2rem;
+}
+
+.timeline {
+    --timeline-line-x: 0.55rem;
+    --timeline-line-width: 2px;
+    --timeline-marker-size: 0.72rem;
+    --timeline-indent: 3rem;
+
+    list-style: none;
+    padding: 0 !important;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.65rem;
+    bottom: 0.65rem;
+    left: var(--timeline-line-x);
+    width: var(--timeline-line-width);
+    background: repeating-linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--accent) 22%, transparent) 0 0.42rem,
+        transparent 0.42rem 0.9rem
+    );
+}
+
+.timeline__item {
+    padding-left: var(--timeline-indent) !important;
+    position: relative;
+
+    & + .timeline__item {
+        margin-block-start: 1rem;
+    }
+}
+
+.timeline__item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.92rem;
+    left: calc(
+        var(--timeline-line-x) - ((var(--timeline-marker-size) - var(--timeline-line-width)) / 2)
+    );
+    width: var(--timeline-marker-size);
+    height: var(--timeline-marker-size);
+    border-radius: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 0 0.18rem color-mix(in oklab, var(--accent) 12%, transparent);
+}
+
+.timeline__entry {
+    display: grid;
+    gap: 0.55rem;
+    position: relative;
+    padding: 0.95rem 1rem 1rem 1.2rem;
+    border: 1px solid color-mix(in oklab, currentColor 8%, transparent);
+    border-radius: 0.8rem;
+    background: color-mix(in oklab, currentColor 2%, transparent);
+}
+
+.timeline__entry::before {
+    content: ">_";
+    position: absolute;
+    left: -1.25rem;
+    top: 0.95rem;
+    color: var(--accent);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.timeline__date {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.12rem 0.42rem;
+    border-radius: 0.35rem;
+    background: color-mix(in oklab, currentColor 4%, transparent);
+    color: var(--text-muted);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.73rem;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+h2.timeline__title {
+    margin-block: 0 !important;
+    font-size: clamp(1.14rem, 2vw, 1.4rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    font-weight: 560;
+}
+
+.timeline__title a {
+    text-decoration: none;
+}
+
+.timeline__title a:not(:hover) {
+    color: inherit;
+}
+
+.timeline__title a:hover,
+.timeline__title a:focus-visible {
+    color: var(--accent);
+}
+
+.timeline__excerpt {
+    margin: 0;
+    max-width: 60ch;
+    color: color-mix(in oklab, currentColor 72%, transparent);
+    line-height: 1.65;
+    text-wrap: pretty;
+}
+
+.timeline__tags {
+    margin-top: 0.05rem;
+}

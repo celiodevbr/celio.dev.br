@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "11ty-me",
   "version": "1.0.0",
   "description": "A simple project to quicklauch my blog for netflify",
@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "eleventy-plugin-icons": "^4.0.1",
-    "eleventy-plugin-page-assets": "^0.3.0",
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",

@@ -1,4 +1,4 @@
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+﻿import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginMarkdown from "./utils/markdown.js";
 import pluginFilters from "./utils/filters.js";
@@ -36,7 +36,7 @@ export default function (eleventyConfig) {
 
 		const validType = types[type] || 'info'; // Default to info if type is invalid
 
-		return `<div class="infobox ${validType}"><p>${content}</p></div>`;
+		return `<div class="infobox infobox--${validType}"><p class="infobox__content">${content}</p></div>`;
 	});
 
 	// Collections: Posts
@@ -49,13 +49,6 @@ export default function (eleventyConfig) {
 		return posts;
 	});
 
-	eleventyConfig.addShortcode("1sti", function (content) {
-		const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
-		if (imgMatch) {
-			return `<img src="${imgMatch[1]}" alt="Image" style="height: 100%;">`;
-		}
-		return ''; // Return an empty string if no image is found
-	});
 };
 
 export const config = {
@@ -81,3 +74,4 @@ export const config = {
 		output: "public",
 	}
 }
+

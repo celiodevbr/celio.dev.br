@@ -1,0 +1,224 @@
+header.sidebar {
+    position: relative;
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in oklab, var(--neutral-0) 94%, var(--accent) 6%),
+            var(--neutral-0)
+        );
+    border-inline-end: 1px solid color-mix(in oklab, currentColor 8%, transparent);
+
+    @media (min-width: 736px) {
+        top: 0;
+        position: sticky;
+        height: 100vh;
+    }
+}
+
+.sidebar__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 100%;
+    padding: 2.25rem 1rem 1rem;
+}
+
+.sidebar__avatar {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 0.55rem;
+    border-radius: 1.5rem;
+    background:
+        radial-gradient(circle at 50% 35%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 65%),
+        color-mix(in oklab, currentColor 3%, transparent);
+    box-shadow:
+        inset 0 0 0 1px color-mix(in oklab, currentColor 8%, transparent),
+        0 18px 34px color-mix(in oklab, var(--neutral-1000) 7%, transparent);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.sidebar__avatar-image {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 1.1rem;
+    object-fit: cover;
+    box-shadow:
+        0 0 0 1px color-mix(in oklab, currentColor 10%, transparent),
+        0 0 0 0.35rem color-mix(in oklab, var(--accent) 12%, transparent),
+        0 0 2.4rem color-mix(in oklab, var(--accent) 18%, transparent);
+}
+
+.sidebar__avatar:hover,
+.sidebar__avatar:focus-visible {
+    transform: translateY(-0.12rem);
+    box-shadow:
+        inset 0 0 0 1px color-mix(in oklab, var(--accent) 18%, transparent),
+        0 22px 42px color-mix(in oklab, var(--neutral-1000) 9%, transparent);
+}
+
+.sidebar__identity {
+    display: grid;
+    gap: 0.55rem;
+    width: min(25ch, 100%);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.sidebar__kicker {
+    color: var(--text-muted);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sidebar__title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.35rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+}
+
+.sidebar__title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar__desc {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+.sidebar__nav {
+    margin-top: 0.5rem;
+}
+
+.sidebar__nav ul {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.sidebar__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.55rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid color-mix(in oklab, currentColor 7%, transparent);
+    border-radius: 999px;
+    background: color-mix(in oklab, currentColor 3%, transparent);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition:
+        color 140ms ease,
+        border-color 140ms ease,
+        background-color 140ms ease;
+}
+
+.sidebar__nav-link:hover,
+.sidebar__nav-link:focus-visible {
+    border-color: color-mix(in oklab, currentColor 10%, transparent);
+    background: color-mix(in oklab, currentColor 4%, transparent);
+    color: var(--text);
+}
+
+.sidebar__nav-link.is-active {
+    border-color: color-mix(in oklab, var(--accent) 18%, transparent);
+    background: color-mix(in oklab, var(--accent) 7%, transparent);
+    color: var(--accent);
+}
+
+.sidebar__nav-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.sidebar__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.social-links__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, currentColor 8%, transparent);
+    background: color-mix(in oklab, currentColor 3%, transparent);
+    color: inherit;
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.social-links__link:hover,
+.social-links__link:focus-visible {
+    transform: translateY(-0.12rem);
+    border-color: color-mix(in oklab, var(--accent) 22%, transparent);
+    background: color-mix(in oklab, var(--accent) 8%, transparent);
+    color: var(--accent);
+    box-shadow: 0 0 0 0.3rem color-mix(in oklab, var(--accent) 10%, transparent);
+}
+
+@media (max-width: 736px) {
+    header.sidebar {
+        border-inline-end: 0;
+        border-block-end: 1px solid color-mix(in oklab, currentColor 8%, transparent);
+    }
+
+    .sidebar__inner {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .sidebar__avatar {
+        display: none;
+    }
+
+    .sidebar__identity {
+        width: 100%;
+        text-align: left;
+    }
+
+    .sidebar__title {
+        font-size: 1.7rem;
+    }
+
+    .sidebar__nav {
+        order: -1;
+        margin-top: 0;
+    }
+
+    .sidebar__nav ul {
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+
+    .sidebar__nav-link {
+        justify-content: flex-start;
+        min-height: 2.6rem;
+        border-radius: 0.9rem;
+    }
+
+    .sidebar__footer {
+        margin-top: 0;
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+}

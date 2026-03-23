@@ -13,27 +13,27 @@ eleventyNavigation:
 ---
 
 {% if collections.posts.length > 0 %}
-    <ol class="post-timeline" role="list">
+    <ol class="timeline" role="list">
         {% for post in collections.posts %}
             {% set visibleTags = post.data.tags | filterTagList %}
-            <li class="post-timeline__item">
-                <article class="post-timeline__entry">
-                    <time class="post-timeline__date" datetime="{{ post.date | htmlDateString }}">
+            <li class="timeline__item">
+                <article class="timeline__entry">
+                    <time class="timeline__date" datetime="{{ post.date | htmlDateString }}">
                         {{ post.date | readableDate("dd 'de' LLL yyyy") }}
                     </time>
 
-                    <h2 class="post-timeline__title">
+                    <h2 class="timeline__title">
                         <a href="{{ post.url }}#main">{{ post.data.title }}</a>
                     </h2>
 
                     {% if post.data.description %}
-                        <p class="post-timeline__excerpt">{{ post.data.description }}</p>
+                        <p class="timeline__excerpt">{{ post.data.description }}</p>
                     {% endif %}
 
                     {% if visibleTags and visibleTags.length %}
-                        <ul class="tag-list tag-list--muted" role="list" aria-label="Tags do post">
+                        <ul class="tag-list tag-list--muted timeline__tags" role="list" aria-label="Tags do post">
                             {% for tag in visibleTags %}
-                                <li>{{ tag }}</li>
+                                <li class="tag-list__item">{{ tag }}</li>
                             {% endfor %}
                         </ul>
                     {% endif %}

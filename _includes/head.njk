@@ -1,28 +1,39 @@
 ﻿{%- set metatitle = title ~ " • " ~ site.title if title else site.title -%}
 {%- set metadesc = description or desc or site.desc -%}
 {%- set metatype = type or "website" -%}
+{%- set metaurl = site.baseurl ~ page.url -%}
+{%- set metaimage = site.baseurl ~ "/assets/avatar.svg" -%}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="theme-color" content="#2d9cdb">
 
-<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/assets/avatar.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/assets/avatar.svg">
 
 <title>{{ metatitle | trim }}</title>
 
 <meta name="description" content="{{ metadesc | trim }}">
-
-<meta property="og:title" content="{{ metatitle | trim }}">
-<meta property="og:type" content="{{ metatype | trim }}">
-<meta property="og:url" content="{{ site.baseurl ~ page.url }}">
-<meta property="og:image" content="/assets/avatar.png">
-<meta property="og:description" content="{{ metadesc | trim }}">
+<meta name="author" content="{{ site.author or site.title }}">
 <meta name="fediverse:creator" content="@celio@fosstodon.org">
 
-<link rel="canonical" href="{{ site.baseurl ~ page.url }}">
+<link rel="canonical" href="{{ metaurl }}">
+
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="{{ metatitle | trim }}">
+<meta property="og:type" content="{{ metatype | trim }}">
+<meta property="og:url" content="{{ metaurl }}">
+<meta property="og:image" content="{{ metaimage }}">
+<meta property="og:description" content="{{ metadesc | trim }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ metatitle | trim }}">
+<meta name="twitter:description" content="{{ metadesc | trim }}">
+<meta name="twitter:image" content="{{ metaimage }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/assets/style.css">
-

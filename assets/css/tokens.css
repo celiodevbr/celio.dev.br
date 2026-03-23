@@ -1,0 +1,25 @@
+:root {
+    --accent: #2d9cdb;
+
+    --neutral-0: #ffffff;
+    --neutral-50: #fafafa;
+    --neutral-100: #eaeaea;
+    --neutral-500: #666666;
+    --neutral-900: #161616;
+    --neutral-1000: #000000;
+
+    --text: var(--neutral-1000);
+    --text-muted: var(--neutral-500);
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            --neutral-1000: #ffffff;
+            --neutral-900: #f1f1f1;
+            --neutral-800: #eaeaea;
+            --neutral-500: #9a9a9a;
+            --neutral-100: #323232;
+            --neutral-50: #121212;
+            --neutral-0: #000000;
+        }
+    }
+}
